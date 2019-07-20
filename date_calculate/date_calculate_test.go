@@ -50,3 +50,19 @@ func Test_calculateHours_Input_startDate_5_2_1996_endDate_20_7_2019_Should_Be_20
 	}
 
 }
+
+func Test_calculateSeconds_Input_startDate_2_8_1995_endDate_20_7_2019_Should_Be_756345600(t * testing.T)  {
+
+
+	expected := 756345600
+	startDate := time.Date(1995,8,2,0,0,0,0,time.UTC)
+	endDate :=  time.Date(2019,7,20,0,0,0,0,time.UTC)
+
+	actual :=  calculateSeconds(startDate,endDate)
+
+
+	if actual != expected {
+		t.Errorf("Expected %d but it got %d",expected,actual)
+	}
+
+}
